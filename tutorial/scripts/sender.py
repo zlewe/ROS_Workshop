@@ -8,7 +8,7 @@ def sender():
     rospy.init_node('sender', anonymous=False)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        hello_str = "hello world %s" % rospy.get_time()
+        message = "hello world %s" % rospy.get_time()
         rospy.loginfo(message)
         pub.publish(message)
         rate.sleep()
